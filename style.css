@@ -1,0 +1,22 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .board {
+    height: 700px;
+    width: 800px;
+    background-color: #323252;
+    color: #e4dcdc;
+  }
+  
+  
+  
+  .wrapper {
+    display: flex;
+  
+  }
+  
+  .taskList {
+    list-style: none;
+  }

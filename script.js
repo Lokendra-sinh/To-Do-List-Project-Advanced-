@@ -20,7 +20,7 @@ function addNewTask(event) {
 
   deleteButton.addEventListener('click', function() {
     newTask.remove();
-  })
+  });
   taskDetails.appendChild(deleteButton);
   newTask.appendChild(taskDetails);
 
