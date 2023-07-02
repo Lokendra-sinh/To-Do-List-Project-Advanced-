@@ -1,22 +1,201 @@
-html {
-    height: 100%;
-    width: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
+:root {
+  --bg-color: rgb(20, 20, 20);
+  --accent-color: #ff00ff;
+  --text-color: #ffffff;
+  --grad-color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,0,255,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #323252;
+  color: var(--text-color);
+  height: 100vh;
+  width: 100vw;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  position: relative;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.inputField {
+  margin-right: 5px;
+  flex-grow: 1;
+ 
+}
+
+input[type="text"] {
+  padding: 10px;
+  background-color: #232339;
+  color: var(--text-color);
+  border-radius: 5px;
+  border: 1.5px solid transparent;
+  font-size: 20px;
+  width: 20em;
+  transition: border-color 0.5s ease;
+  /* animation: glowingBorder 2s infinite; */
+}
+
+input[type="text"]:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px var(--accent-color);
+}
+
+/* .taskList li input[type="checkbox"] {
+  margin-right: -2px;
+  appearance: none;
+  border: 3px solid var(--accent-color); 
+  border-radius: 50%;
+  background-color: #ffffff;
+  
+  width: 25px;
+  height: 25px;
+} */
+
+.taskList li input[type="checkbox"] {
+  margin-right: 0px;
+  appearance: none; /* Remove default checkbox appearance */
+  border: 2px solid var(--accent-color); /* Add a border */
+  border-radius: 50%; /* Make it a circle */
+  width: 23px;
+  height: 23px;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.taskList li input[type="checkbox"]::after {
+  /* ...other styles... */
+  content: '';
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border-color: transparent;
+  border: 3px solid var(--text-color);
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+}
+
+
+.taskList li input[type="checkbox"]:checked {
+  background-color: var(--accent-color); 
+}
+
+.taskList li input[type="checkbox"]:checked::after {
+  opacity: 1; 
+} 
+
+
+.addButton {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  color: var(--text-color);
+  font-size: 25px;
+  background-color: #ff0099;
+  cursor: pointer;
+}
+
+.addButton:hover {
+   background-color: #f54242;
+  transition: background-color 0.3s ease;
+}
+
+.taskList {
+  list-style: none;
+  padding: 5px;
+  width: 400px;
+  margin: 100px auto;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.slideIn {
+  animation: slideIn 0.5s cubic-bezier(0.63,0,0.35,1.42);
+}
+
+.slideOut {
+  animation: slideOut 0.5s cubic-bezier(0.68,-0.55,0.27,1.55);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100vw);
   }
-  
-  .board {
-    height: 700px;
-    width: 800px;
-    background-color: #323252;
-    color: #e4dcdc;
+  to {
+    transform: translateX(0);
   }
-  
-  
-  
-  .wrapper {
-    display: flex;
-  
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
   }
-  
-  .taskList {
-    list-style: none;
+  to {
+    transform: translateX(100vw);
   }
+}
+
+.taskList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #232339;
+  padding: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.taskList li:hover {
+  background-color: #2f2f4f;
+}
+
+.taskList li span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 80%;
+  font-weight: 200;
+}
+
+.taskList li button {
+  background-color: #ff0099;
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.taskList li button:hover {
+  background-color: #f54242;
+}
