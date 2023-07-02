@@ -8,7 +8,7 @@
 
     if (inputTextValue.trim() === '') {
       alert('Please enter a task!');
-      return; // Exit the function if the input is empty
+      return; 
     }
 
     const newTask = document.createElement('li');
@@ -24,7 +24,6 @@
     deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
 
     newTask.classList.add('slideIn');
-    // deleteButton.textContent = 'Delete';
 
     deleteButton.addEventListener('click', function() {
       newTask.classList.add('slideOut');

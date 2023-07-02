@@ -4,7 +4,6 @@
   --bg-color: rgb(20, 20, 20);
   --accent-color: #ff00ff;
   --text-color: #ffffff;
-  --grad-color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,0,255,1) 100%, rgba(0,212,255,1) 100%);
 }
 
 * {
@@ -43,7 +42,6 @@ h1 {
 .inputField {
   margin-right: 5px;
   flex-grow: 1;
- 
 }
 
 input[type="text"] {
@@ -87,7 +85,7 @@ input[type="text"]:focus {
 
 .taskList li input[type="checkbox"]::after {
   /* ...other styles... */
-  content: '';
+  content: "";
   position: absolute;
   margin: auto;
   top: 0;
@@ -100,18 +98,16 @@ input[type="text"]:focus {
   border-color: transparent;
   border: 3px solid var(--text-color);
   opacity: 0;
-  transition: opacity .5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
-
 .taskList li input[type="checkbox"]:checked {
-  background-color: var(--accent-color); 
+  background-color: var(--accent-color);
 }
 
 .taskList li input[type="checkbox"]:checked::after {
-  opacity: 1; 
-} 
-
+  opacity: 1;
+}
 
 .addButton {
   border: none;
@@ -124,7 +120,7 @@ input[type="text"]:focus {
 }
 
 .addButton:hover {
-   background-color: #f54242;
+  background-color: #f54242;
   transition: background-color 0.3s ease;
 }
 
@@ -138,11 +134,11 @@ input[type="text"]:focus {
 }
 
 .slideIn {
-  animation: slideIn 0.5s cubic-bezier(0.63,0,0.35,1.42);
+  animation: slideIn 0.5s cubic-bezier(0.63, 0, 0.35, 1.42);
 }
 
 .slideOut {
-  animation: slideOut 0.5s cubic-bezier(0.68,-0.55,0.27,1.55);
+  animation: slideOut 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 @keyframes slideIn {
